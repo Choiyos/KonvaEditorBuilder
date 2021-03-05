@@ -1,19 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const prod = process.env.NODE_ENV === 'production';
-
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
   mode: prod ? 'production' : 'development',
   devtool: prod ? 'hidden-source-map' : 'eval',
-
   entry: './src/index.tsx',
-
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
-
   module: {
     rules: [
       {
@@ -22,12 +19,10 @@ module.exports = {
       },
     ],
   },
-
 	output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
   },
-
   plugins: [
 		new webpack.ProvidePlugin({
       React: 'react',
@@ -37,7 +32,6 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-
   devServer: {
     historyApiFallback: true,
     inline: true,
