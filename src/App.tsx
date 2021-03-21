@@ -1,9 +1,12 @@
 import React from 'react';
-import { RecoilRoot } from 'recoil';
+import { EditorRoutes } from './routers/EditorRoutesModel';
+import RouteComponents from './routers/RouteComponents';
 
 const App = () => (
     <>
-      Init
+      <RouteComponents
+        routeModels={EditorRoutes}
+      />
     </>
 );
 
