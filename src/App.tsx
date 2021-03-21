@@ -1,5 +1,12 @@
 import React from 'react';
+import { RecoilRoot } from 'recoil';
 
-const App = () => <>Init</>;
+const App = () => (
+  <RecoilRoot>
+    <>
+      Init
+    </>
+  </RecoilRoot>
+);
 
 export default App;
